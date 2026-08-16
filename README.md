@@ -139,6 +139,7 @@ conversa.txt (ou links.txt)
 ```
 IguinhoMP3/
 ├── .gitignore
+├── LICENSE
 ├── README.md
 ├── python/
 │   ├── baixador.py              # Entrada principal: orquestra o processo todo
@@ -203,4 +204,6 @@ Isso garante que a mesma música não ocupe espaço duas vezes, mesmo que venha 
 
 ## Licença
 
-Projeto pessoal. Nenhuma licença foi declarada ainda — entre em contato com o autor antes de reutilizar ou distribuir o código.
+Distribuído sob a **licença MIT** — uma licença open-source permissiva: você pode usar, copiar, modificar, distribuir e até criar serviços comerciais a partir deste código, desde que mantenha o aviso de copyright original. Consulte o arquivo [LICENSE](LICENSE).
+
+> Nota: utilize o serviço apenas para baixar conteúdo cujo download seja permitido pelos seus autores. A licença MIT se refere ao código, e não ao uso que cada pessoa faz dele.
