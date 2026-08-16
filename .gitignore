@@ -1,0 +1,33 @@
+# ============================================================
+# Diretórios gerados em tempo de execução
+# ============================================================
+
+# FFmpeg (baixado/extraído automaticamente pelo script)
+/ffmpeg/
+/python/ffmpeg/
+
+# Arquivos gerados (links extraídos, válidos, com erro)
+/arquivos/
+
+# Músicas baixadas
+/musicas/
+
+# Arquivos temporários
+/temp/
+
+# ============================================================
+# Dados do usuário (não versionar)
+# ============================================================
+
+# Conversa do WhatsApp com os links
+/conversa.txt
+
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
