@@ -878,8 +878,6 @@ def main():
 
     parser.add_argument(
         "conversa",
-        nargs="?",
-        default=str(PASTA_BASE / "conversa.txt"),
         help=(
             "Caminho do arquivo .txt da conversa "
             "do WhatsApp com os links."
@@ -888,8 +886,6 @@ def main():
 
     parser.add_argument(
         "destino",
-        nargs="?",
-        default=str(PASTA_SAIDA),
         help=(
             "Diretório onde as músicas baixadas "
             "serão salvas."
@@ -900,8 +896,63 @@ def main():
 
     PASTA_SAIDA = Path(args.destino)
 
+    # ----------------------------------------------------
+    # Valida o arquivo de conversa informado
+    # ----------------------------------------------------
+
+    conversa = Path(args.conversa)
+
+    if not conversa.exists():
+
+        print()
+        print("ERRO: Arquivo de conversa não encontrado:")
+        print(conversa.resolve())
+
+        return
+
+    # ----------------------------------------------------
+    # Verifica se o disco do destino está disponível
+    # ----------------------------------------------------
+
+    unidade = PASTA_SAIDA.anchor
+
+    if unidade and not os.path.exists(unidade):
+
+        print()
+        print(
+            f"ERRO: O disco {unidade} não está disponível."
+        )
+        print(
+            f"Destino informado: {PASTA_SAIDA}"
+        )
+
+        return
+
+    # ----------------------------------------------------
+    # Cria o diretório de destino, se ainda não existir
+    # ----------------------------------------------------
+
+    try:
+
+        PASTA_SAIDA.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+    except OSError as erro:
+
+        print()
+        print(
+            "ERRO: Não foi possível criar o diretório "
+            "de destino:"
+        )
+        print(PASTA_SAIDA)
+        print(erro)
+
+        return
+
     print()
-    print(f"Conversa:  {Path(args.conversa).resolve()}")
+    print(f"Conversa:  {conversa.resolve()}")
     print(f"Destino:   {PASTA_SAIDA.resolve()}")
 
     try:
